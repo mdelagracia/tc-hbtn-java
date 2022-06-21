@@ -6,7 +6,7 @@ public class Numeros0a99 {
             if (numero < 99) {
                 System.out.print(numero + ", ");
             } else {
-                System.out.print(numero);
+                System.out.println(numero);
             }
         }
     }
