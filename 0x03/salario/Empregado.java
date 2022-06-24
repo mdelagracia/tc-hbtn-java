@@ -1,4 +1,5 @@
 public class Empregado {
+
     public double salarioFixo;
     public double bonus;
 
