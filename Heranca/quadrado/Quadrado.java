@@ -1,6 +1,6 @@
 
 
-public class Quadrado  extends  Retangulo{
+public class Quadrado extends Retangulo {
     private double lado;
 
     public double getLado() {
@@ -16,12 +16,8 @@ public class Quadrado  extends  Retangulo{
             this.lado = lado;
         }
     }
+    public String toString() {
 
-    public String toString(){
-
-        return ("[Quadrado] " + String.format("%.2f", lado)) ;
+        return ("[Quadrado] " + String.format("%.2f", lado));
     }
-
-
-
 }
