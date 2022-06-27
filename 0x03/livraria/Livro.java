@@ -35,7 +35,7 @@ public class Livro {
 
     public void setAutor(String autor) throws AutorInvalidoException {
         if (new StringTokenizer(autor).countTokens() < 2) {
-            throw new AutorInvalidoException("Nome do autor invalido");
+            throw new AutorInvalidoException("Nome de autor invalido");
         }
         this.autor = autor;
     }
@@ -45,5 +45,6 @@ public class Livro {
             throw new LivroInvalidoException("Preco de livro invalido");
         }
         this.preco = preco;
+
     }
 }
