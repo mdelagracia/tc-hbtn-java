@@ -2,7 +2,8 @@ import java.util.Locale;
 
 public class Program {
     public static void main(String[] args) {
-        Locale.setDefault(new Locale("pt","BR"));
+        final var locale = new Locale("pt", "BR");
+        Locale.setDefault(locale);
 
         try {
             Livro livro1 = new Livro(
