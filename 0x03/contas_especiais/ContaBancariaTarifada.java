@@ -18,10 +18,7 @@ public class ContaBancariaTarifada extends ContaBancariaBasica {
     public void depositar(double valor) throws OperacaoInvalidaException {
         super.depositar(valor);
         super.saldo -= 0.1;
-       // while (getNumeracao() == getNumeracao()) {
-       //     tarifaTransacao = quantidadeTransacoes * 0.1;
-       // }
-       // saldo = getSaldo() + valor - tarifaTransacao;
+
     }
 
 
@@ -30,10 +27,6 @@ public class ContaBancariaTarifada extends ContaBancariaBasica {
         super.sacar(valor);
         super.saldo -= 0.1;
 
-       // while (getNumeracao() == getNumeracao()) {
-       //     tarifaTransacao = quantidadeTransacoes * 0.1;
-       // }
-       // saldo = getSaldo() - valor - tarifaTransacao;
 
     }
 
