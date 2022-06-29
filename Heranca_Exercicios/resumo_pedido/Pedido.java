@@ -34,8 +34,7 @@ public class Pedido {
 
         System.out.println("------- RESUMO PEDIDO -------");
         for (ItemPedido item : itens) {
-            System.out.printf("Tipo: %s Titulo: %s Preco: %.2f Quant: %d Total: %.2f\n",item.produto.getClass().getSimpleName(),item.produto.titulo, item.produto.obterPrecoLiquido(), item.quantidade, (item.produto.obterPrecoLiquido() * item.quantidade));
-            //System.out.printf("Tipo: " + item.produto.getClass().getSimpleName() + " Titulo:" +  item.produto.titulo + " Preco: %.2f",  item.produto.obterPrecoLiquido() + " Quant: " + item.quantidade + " Total: %.2f",  (item.produto.obterPrecoLiquido() * item.quantidade));
+            System.out.printf("Tipo: %s  Titulo: %s  Preco: %.2f  Quant: %d  Total: %.2f\n",item.produto.getClass().getSimpleName(),item.produto.titulo, item.produto.obterPrecoLiquido(), item.quantidade, (item.produto.obterPrecoLiquido() * item.quantidade));
         }
         System.out.println("----------------------------");
         System.out.printf("DESCONTO: %.2f \n", calcularDesconto());
