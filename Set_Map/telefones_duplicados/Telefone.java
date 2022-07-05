@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Telefone {
+public class Telefone implements  Comparable<Telefone> {
     private String codigoArea;
     private String numero;
 
@@ -37,5 +37,10 @@ public class Telefone {
         result = prime * result + ((codigoArea == null) ? 0 : codigoArea.hashCode());
         result = prime * result + ((numero == null) ? 0 : numero.hashCode());
         return result;
+    }
+
+    @Override
+    public int compareTo(Telefone o){
+        return numero.compareTo(o.numero);
     }
 }
