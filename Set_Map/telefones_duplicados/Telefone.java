@@ -1,46 +1,37 @@
 import java.util.Objects;
 
-public class Telefone implements  Comparable<Telefone> {
+public class Telefone {
     private String codigoArea;
     private String numero;
 
     public Telefone(String codigoArea, String numero) {
-        this.codigoArea = codigoArea;
         this.numero = numero;
+        this.codigoArea = codigoArea;
     }
 
-    public String getCodigoArea() {
-        return codigoArea;
-    }
 
-    public String getNumero() {
-        return numero;
-    }
-
-    @Override
     public String toString() {
-        return String.format("(%s) %s", codigoArea, numero);
+        return String.format("(%s) %s", this.codigoArea, this.numero);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Telefone telefone = (Telefone) o;
-        return codigoArea.equals(telefone.codigoArea) && numero.equals(telefone.numero);
+    public boolean equals(Object var1) {
+        if (this == var1) {
+            return true;
+        } else if (var1 != null && this.getClass() == var1.getClass()) {
+            Telefone var2 = (Telefone)var1;
+            return this.codigoArea.equals(var2.codigoArea) && this.numero.equals(var2.numero);
+        } else {
+            return false;
+        }
     }
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((codigoArea == null) ? 0 : codigoArea.hashCode());
-        result = prime * result + ((numero == null) ? 0 : numero.hashCode());
-        return result;
+        int hash = 7;
+        hash = 31 * hash + Objects.hashCode(this.codigoArea);
+        hash = 31 * hash + Objects.hashCode(this.numero);
+        return hash;
     }
 
-    @Override
-    public int compareTo(Telefone o){
-        return numero.compareTo(o.numero);
-    }
+
 }

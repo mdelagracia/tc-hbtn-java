@@ -1,20 +1,19 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.TreeSet;
+
 
 public class ListaTelefonica {
-    HashMap<String, TreeSet<Telefone>> telefones;
+   private HashMap<String, HashSet<Telefone>> telefones;
 
     public ListaTelefonica() {
-        telefones = new HashMap<>();
+        this.telefones = new HashMap<>();
     }
 
-    public void adicionarTelefone(String nome, Telefone novoTelefone) {
-        TreeSet<Telefone> lista = telefones.get(nome); //retorna dentro do hashmap o valor vinculado ao nome
+    public HashSet<Telefone> adicionarTelefone(String nome, Telefone novoTelefone) {
+        HashSet<Telefone> lista = telefones.get(nome); //retorna dentro do hashmap o valor vinculado ao nome
 
         if (lista == null) { // verificar se existe algum numero na lista
-            lista = new TreeSet<Telefone>();// se nao existe, inicializa uma nova lista em branco
+            lista = new HashSet<Telefone>();// se nao existe, inicializa uma nova lista em branco
         } else {
             if (lista.contains(novoTelefone)) {
                 throw new IllegalArgumentException("Telefone jah existente para essa pessoa");
@@ -32,10 +31,18 @@ public class ListaTelefonica {
         lista.add(novoTelefone);// por fim adiciona o novo numero de telefone na lista
 
         telefones.put(nome, lista); //adicionando a lista no map
+        return lista;
     }
 
-    public TreeSet<Telefone> buscar(String nome) {
-        return telefones.get(nome);
+    public HashSet<Telefone>  buscar(String nome){
+
+        for (String lista : this.telefones.keySet() ) {
+
+            if(lista.equals(nome)){
+                return this.telefones.get(lista);
+            }
+        }
+        return null;
     }
 
 }
