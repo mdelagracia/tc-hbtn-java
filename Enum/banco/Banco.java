@@ -61,7 +61,7 @@ public class Banco {
                 }else{
                     System.out.println("Cliente: " + cliente.getNome() + " [" + (i + 1) + "]");
                     for(int j = 0; j < cliente.getTransacoes().size(); j++){
-                        System.out.println("[" + (j + 1) + "] valor " + cliente.getTransacoes().get(j));
+                        System.out.println("  [" + (j + 1) + "] valor " + cliente.getTransacoes().get(j));
                     }
                 }
             }
