@@ -1,7 +1,12 @@
     import provedores.*;
 
-public class Program {
+    import java.util.Locale;
+
+    public class Program {
+
     public static void main(String[] args) {
+        final var locale = new Locale ("pt","BR");
+        Locale.setDefault(locale);
         Pedido pedido1 = new Pedido(1, 1500, 234.90);
         Pedido pedido2 = new Pedido(2, 600, 124.00);
         Pedido pedido3 = new Pedido(3, 3000, 53.00);
