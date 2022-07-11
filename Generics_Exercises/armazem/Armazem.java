@@ -1,16 +1,16 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-public class Armazem<T> implements Armazenavel {
+
+public class Armazem<T> implements Armazenavel<T>{
     Map<String, T> itensArmazem;
 
     public Armazem() {
-        this.itensArmazem = new HashMap<>();
+        this.itensArmazem = new TreeMap<>();
     }
 
     @Override
-    public void adicionarAoInventario(String nome, Object item) {
-        itensArmazem.put(nome, (T) item);
+    public void adicionarAoInventario(String nome, T item) {
+        itensArmazem.put(nome, item);
     }
 
     @Override
