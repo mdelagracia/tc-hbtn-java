@@ -33,7 +33,7 @@ public class ConsultaPessoas {
     public static Map<String, Double> obterMediaSalarioPorCargo(List<Pessoa> pessoas){
         Map<String, Double> mediaSalario = pessoas.stream()
                 .collect(groupingBy(Pessoa::getCargo,
-                averagingDouble(Pessoa::getSalario)));
+                Collectors.averagingDouble(Pessoa::getSalario)));
 
                 return mediaSalario;
     }
