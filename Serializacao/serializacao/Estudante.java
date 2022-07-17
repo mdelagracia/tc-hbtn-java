@@ -27,7 +27,7 @@ public class Estudante implements Serializable {
     public String toString() {
         return "Estudante {" +
                 " nome='" + nome +
-                "', idade=" + idade +
+                "', idade='" + idade +
                 "', senha='" + senha +
                 "' }";
     }
