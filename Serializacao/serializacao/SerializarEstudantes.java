@@ -1,4 +1,5 @@
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,19 +27,19 @@ public class SerializarEstudantes<T> {
         }
     }
 
-    public List<T> desserializar() throws IOException {
-        List<T> lista = new ArrayList<>();
+    public List<T> desserializar() throws Exception {
+        List<T> lista = null;
         try {
             File arq = new File(nomeArquivo);
             if (arq.exists()) {
                 ObjectInputStream objInput = new ObjectInputStream(new FileInputStream(arq));
                 lista = (List<T>) objInput.readObject();
                 objInput.close();
+            }else{
+                System.out.println("Nao foi possivel desserializar");
             }
-        } catch (IOException erro1) {
+        } catch (IOException erro) {
             throw new IOException("Nao foi possivel desserializar");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
         return lista;
     }

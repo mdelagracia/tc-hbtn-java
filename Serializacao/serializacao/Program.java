@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Program {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
         Estudante estudante1 = new Estudante(21, "Jane Doe", "1011121314");
         Estudante estudante2 = new Estudante(33, "John Bannons", "1122334455");
